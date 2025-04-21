@@ -37,9 +37,6 @@ htmlcov/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Excel files (если хотите игнорировать результаты опросов)
-survey_results/
-
 # Environment variables
 .env
 *.env
