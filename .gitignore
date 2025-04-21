@@ -1,0 +1,58 @@
+# Virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build and distribution directories
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test and coverage reports
+htmlcov/
+.tox/
+.coverage
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Excel files (если хотите игнорировать результаты опросов)
+survey_results/
+
+# Environment variables
+.env
+*.env
+
+# Database files
+*.db
+*.sqlite
+
+# Log files
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
