@@ -8,6 +8,8 @@ from openpyxl.utils import get_column_letter
 RESULTS_FILE = "survey_results/all_results.xlsx"
 
 
+
+
 async def save_to_excel(all_answers: dict, username: str, poll_name: str) -> None:
     os.makedirs('survey_results', exist_ok=True)
 
@@ -39,6 +41,16 @@ async def save_to_excel(all_answers: dict, username: str, poll_name: str) -> Non
     combined_data.to_excel(RESULTS_FILE, index=False, engine='openpyxl')
 
     adjust_column_width(RESULTS_FILE)
+
+
+def get_results():
+    if not os.path.getsize(RESULTS_FILE) > 0:
+        return []
+    data = pd.read_excel(RESULTS_FILE,engine='openpyxl')
+    data["Дата и время"] = pd.to_datetime(data["Дата и время"])
+    cur_mon = datetime.now().month
+    data = data[data["Дата и время"].dt.month == cur_mon]
+    return data.to_dict(orient='records')
 
 
 def adjust_column_width(file_path):

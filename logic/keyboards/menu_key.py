@@ -12,6 +12,14 @@ def menu_keyboard():
     return keyboard.as_markup()
 
 
+def admin_menu():
+    keyboard = InlineKeyboardBuilder()
+    keyboard.button(text="📊 Получить результаты опроса", callback_data="get_results")
+    keyboard.button(text="🗑️ Очистить результаты", callback_data="clear_results")
+    keyboard.adjust(1)
+    return keyboard.as_markup()
+
+
 def variants_keyboard(with_back=False):
     buttons = [
         [types.InlineKeyboardButton(text=str(i), callback_data=f"answer_1_to_5:{i}")]

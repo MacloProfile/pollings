@@ -9,7 +9,7 @@ from logic.config import API_TOKEN
 
 
 async def main():
-    bot = Bot(token=API_TOKEN)
+    bot = Bot(token=API_TOKEN, requests_timeout=60)
     dp = Dispatcher(storage=MemoryStorage())
     dp.include_router(get_handlers_router())
     await bot.delete_webhook(drop_pending_updates=True)
