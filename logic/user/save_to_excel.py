@@ -44,6 +44,8 @@ async def save_to_excel(all_answers: dict, username: str, poll_name: str) -> Non
 
 
 def get_results():
+    if not os.path.exists(RESULTS_FILE):
+        open(RESULTS_FILE, "w")
     if not os.path.getsize(RESULTS_FILE) > 0:
         return []
     data = pd.read_excel(RESULTS_FILE,engine='openpyxl')
