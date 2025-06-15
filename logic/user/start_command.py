@@ -1,7 +1,8 @@
 from aiogram import Router
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
-from aiogram.filters import Command
+from aiogram.filters import Command, StateFilter
+
 
 from logic.keyboards.menu_key import menu_keyboard, admin_menu
 from logic.config import ADMIN_ID
@@ -20,7 +21,7 @@ async def start_handler(message: Message, state: FSMContext):
                              reply_markup=menu_keyboard())
 
 
-@router.message()
+@router.message(StateFilter(None))
 async def text_handler(message: Message, state: FSMContext):
     user_id = message.from_user.id
     if user_id == ADMIN_ID:
