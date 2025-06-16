@@ -3,12 +3,10 @@ import os.path
 import pandas as pd
 from aiogram import Router, types, F
 from aiogram.types import FSInputFile, BufferedInputFile
-from aiogram.fsm.context import FSMContext
 import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy
 from logic.questions import QUESTIONS
-from logic.status.Status import SurveyStates
 from logic.user.save_to_excel import get_results, RESULTS_FILE
 from logic.keyboards.menu_key import admin_menu
 router = Router()
